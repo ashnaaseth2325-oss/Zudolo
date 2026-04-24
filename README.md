@@ -141,7 +141,7 @@ Deployment Link: https://zudolo22.netlify.app/
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Frontend:** HTML, CSS, JavaScript (ES6+)
 * **Graphics & Animations:** Three.js
@@ -149,7 +149,7 @@ Deployment Link: https://zudolo22.netlify.app/
 
 ---
 
-## ⚙️ Setup & Installation
+## Setup & Installation
 
 1. Clone the repository:
 
@@ -171,7 +171,7 @@ Open index.html
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 > Add screenshots of:
 
@@ -182,28 +182,28 @@ Open index.html
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
-* 🌍 Online multiplayer for Ludo (WebSockets)
-* 🤖 Advanced AI opponent
-* 🧠 More puzzle games (Chess, Tic-Tac-Toe, etc.)
-* 🔐 User authentication & cloud saves
+* Online multiplayer for Ludo (WebSockets)
+* Advanced AI opponent
+* More puzzle games (Chess, Tic-Tac-Toe, etc.)
+* User authentication & cloud saves
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome!
 Feel free to fork the repo, create a branch, and submit a PR.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
 ---
 
-## 💡 Inspiration
+## Inspiration
 
 Built to create a **fun, engaging, and polished gaming experience** combining classic board and puzzle games into a single modern platform.
