@@ -2,6 +2,8 @@
 
 A modern, interactive browser-based gaming platform featuring **Sudoku** and **Ludo** in a single unified dashboard. Built with **HTML, CSS, and JavaScript**, enhanced with **Three.js animations**, and designed to deliver a smooth, premium gaming experience.
 
+Deployment Link: https://github.com/ashnaaseth2325-oss/Zudolo
+
 ---
 
 ## 🚀 Features
