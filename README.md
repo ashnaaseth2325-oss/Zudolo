@@ -1,4 +1,4 @@
-# 🎮 Multi-Game Web Platform (Sudoku + Ludo)
+# Multi-Game Web Platform (Sudoku + Ludo)
 
 A modern, interactive browser-based gaming platform featuring **Sudoku** and **Ludo** in a single unified dashboard. Built with **HTML, CSS, and JavaScript**, enhanced with **Three.js animations**, and designed to deliver a smooth, premium gaming experience.
 
@@ -6,9 +6,9 @@ Deployment Link: https://zudolo22.netlify.app/
 
 ---
 
-## 🚀 Features
+## Features
 
-### 🌐 Platform
+### Platform
 
 * Single Page Application (SPA)
 * Beautiful **Gaming Dashboard** with game selection
@@ -18,7 +18,7 @@ Deployment Link: https://zudolo22.netlify.app/
 
 ---
 
-## 🧩 Sudoku Game
+## Sudoku Game
 
 ### Core Features
 
@@ -28,13 +28,13 @@ Deployment Link: https://zudolo22.netlify.app/
 
 ### Gameplay Enhancements
 
-* ⏱ Timer (pause/resume)
-* ❌ Mistake counter
-* ✏️ Notes mode (pencil input)
-* 🔁 Undo / Redo
-* 💡 Hint system
-* ✅ Auto-check toggle
-* 💾 Save & Resume game
+* Timer (pause/resume)
+* Mistake counter
+* Notes mode (pencil input)
+* Undo / Redo
+* Hint system
+* Auto-check toggle
+* Save & Resume game
 
 ### UX
 
@@ -44,12 +44,12 @@ Deployment Link: https://zudolo22.netlify.app/
 
 ---
 
-## 🎲 Ludo Game
+## Ludo Game
 
 ### Core Gameplay
 
 * 2–4 Player local multiplayer
-* 🎲 Dice roll (randomized logic)
+* Dice roll (randomized logic)
 * Full Ludo rules:
 
   * Enter token on rolling 6
@@ -72,7 +72,7 @@ Deployment Link: https://zudolo22.netlify.app/
 
 ---
 
-## 🎨 UI / UX
+## UI / UX
 
 * Clean, modern interface inspired by gaming apps
 * Glassmorphism / soft UI styling
@@ -81,7 +81,7 @@ Deployment Link: https://zudolo22.netlify.app/
 
 ---
 
-## ⚡ Three.js Enhancements
+## Three.js Enhancements
 
 * Animated background (particles / gradients)
 * 3D hover effects on dashboard cards
@@ -92,7 +92,7 @@ Deployment Link: https://zudolo22.netlify.app/
 
 ---
 
-## 🧠 State Management
+## State Management
 
 * Modular JavaScript architecture
 * localStorage used for:
@@ -103,7 +103,7 @@ Deployment Link: https://zudolo22.netlify.app/
 
 ---
 
-## ⌨️ Controls
+## Controls
 
 * Keyboard support (Sudoku)
 * Touch-friendly UI for mobile
@@ -111,20 +111,20 @@ Deployment Link: https://zudolo22.netlify.app/
 
 ---
 
-## 🏆 Extra Features
+## Extra Features
 
-* 📊 Leaderboards (best times & wins)
-* ⚙️ Settings panel:
+* Leaderboards (best times & wins)
+* Settings panel:
 
   * Theme toggle
   * Sound toggle
   * Difficulty selection
-* ⏳ Loading animations
-* 🎉 Elegant result / win screens
+* Loading animations
+* Elegant result / win screens
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 📦 project-root
