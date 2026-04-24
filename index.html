@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zudolo — Premium Gaming</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ── LOADING ── -->
+  <div id="loading-screen" class="screen active">
+    <div class="load-wrap">
+      <div class="load-emblem">
+        <div class="load-ring r1"></div>
+        <div class="load-ring r2"></div>
+        <div class="load-ring r3"></div>
+        <span class="load-z">Z</span>
+      </div>
+      <h1 class="load-title">ZUDOLO</h1>
+      <p class="load-sub">Premium Gaming Experience</p>
+      <div class="load-bar-track">
+        <div class="load-bar"></div>
+      </div>
+      <p class="load-credit">by <strong>Ashnaa Seth</strong></p>
+    </div>
+  </div>
+
+  <!-- ── DASHBOARD ── -->
+  <div id="dashboard-screen" class="screen">
+    <header class="dash-header">
+      <div class="brand">
+        <div class="brand-orb">Z</div>
+        <div class="brand-text">
+          <span class="brand-name">ZUDOLO</span>
+          <span class="brand-tagline">Premium Gaming</span>
+        </div>
+      </div>
+      <div class="dash-controls">
+        <button class="ctrl-btn" id="btn-theme-dash" title="Toggle Theme">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+          </svg>
+        </button>
+        <button class="ctrl-btn" id="btn-sound-dash" title="Sound">
+          <svg id="sound-icon-dash" viewBox="0 0 24 24">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+          </svg>
+        </button>
+        <button class="ctrl-btn" id="btn-lb-dash" title="Leaderboard">
+          <svg viewBox="0 0 24 24">
+            <path d="M7.5 21H2V9h5.5v12zm7.25-18h-5.5v18h5.5V3zM22 11h-5.5v10H22V11z" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="dash-main">
+      <div class="dash-hero">
+        <h2 class="hero-headline">Choose Your <em>Game</em></h2>
+        <p class="hero-sub">Logic meets strategy — which champion will you be?</p>
+      </div>
+
+      <div class="game-grid">
+        <!-- Sudoku -->
+        <div class="game-card" id="card-sudoku" tabindex="0">
+          <div class="card-aurora aurora-purple"></div>
+          <div class="card-inner">
+            <div class="card-top">
+              <div class="card-emoji">🔢</div>
+              <span class="card-badge badge-purple">Logic</span>
+            </div>
+            <h3 class="card-title">Sudoku</h3>
+            <p class="card-desc">Fill the 9×9 grid using pure logic. Zero luck, maximum skill.</p>
+            <div class="card-stats-row">
+              <div class="cs"><span class="cs-val" id="sudoku-best-dash">—</span><span class="cs-label">Best</span>
+              </div>
+              <div class="cs"><span class="cs-val" id="sudoku-wins-dash">0</span><span class="cs-label">Wins</span>
+              </div>
+            </div>
+            <button class="btn-play purple" id="btn-play-sudoku">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              Play Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Ludo -->
+        <div class="game-card" id="card-ludo" tabindex="0">
+          <div class="card-aurora aurora-orange"></div>
+          <div class="card-inner">
+            <div class="card-top">
+              <div class="card-emoji">🎲</div>
+              <span class="card-badge badge-orange">Strategy</span>
+            </div>
+            <h3 class="card-title">Ludo</h3>
+            <p class="card-desc">Roll the dice, race your tokens, crush your rivals. Classic glory.</p>
+            <div class="card-stats-row">
+              <div class="cs"><span class="cs-val" id="ludo-wins-dash">0</span><span class="cs-label">Wins</span></div>
+              <div class="cs"><span class="cs-val" id="ludo-games-dash">0</span><span class="cs-label">Played</span>
+              </div>
+            </div>
+            <button class="btn-play orange" id="btn-play-ludo">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              Play Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-lb-row">
+        <h3 class="lb-row-title">🏆 Sudoku Hall of Fame</h3>
+        <div class="lb-chips" id="dash-lb-chips">
+          <span class="lb-empty-chip">No records yet — be the first!</span>
+        </div>
+      </div>
+    </main>
+
+    <footer class="dash-footer">
+      <span>Created with ❤️ by <strong>Ashnaa Seth</strong></span>
+      <span class="footer-dot">·</span>
+      <span class="footer-version">Zudolo v2.0</span>
+    </footer>
+  </div>
+
+  <!-- ── SUDOKU SETUP OVERLAY ── -->
+  <div id="sudoku-setup" class="modal-overlay hidden">
+    <div class="setup-card glass-card">
+      <button class="setup-close" id="btn-cancel-sudoku">✕</button>
+      <div class="setup-icon">🔢</div>
+      <h2 class="setup-title">New Sudoku</h2>
+      <p class="setup-sub">Pick your challenge level</p>
+      <div class="diff-cards">
+        <button class="diff-btn active" data-diff="easy">
+          <span class="diff-pip easy-pip"></span>
+          <strong>Easy</strong><small>46 clues</small>
+        </button>
+        <button class="diff-btn" data-diff="medium">
+          <span class="diff-pip med-pip"></span>
+          <strong>Medium</strong><small>32 clues</small>
+        </button>
+        <button class="diff-btn" data-diff="hard">
+          <span class="diff-pip hard-pip"></span>
+          <strong>Hard</strong><small>24 clues</small>
+        </button>
+      </div>
+      <button class="btn-start purple" id="btn-start-sudoku">Start Game</button>
+    </div>
+  </div>
+
+  <!-- ── LUDO SETUP OVERLAY ── -->
+  <div id="ludo-setup" class="modal-overlay hidden">
+    <div class="setup-card glass-card">
+      <button class="setup-close" id="btn-cancel-ludo">✕</button>
+      <div class="setup-icon">🎲</div>
+      <h2 class="setup-title">New Ludo</h2>
+      <p class="setup-sub">Select number of players</p>
+      <div class="player-cards">
+        <button class="player-btn" data-players="2">
+          <span class="pb-num">2</span><small>1 vs 1 CPU</small>
+        </button>
+        <button class="player-btn" data-players="3">
+          <span class="pb-num">3</span><small>1 vs 2 CPU</small>
+        </button>
+        <button class="player-btn active" data-players="4">
+          <span class="pb-num">4</span><small>1 vs 3 CPU</small>
+        </button>
+      </div>
+      <button class="btn-start orange" id="btn-start-ludo">Start Game</button>
+    </div>
+  </div>
+
+  <!-- ── SUDOKU GAME ── -->
+  <div id="game-screen" class="screen">
+    <header class="game-header glass-header">
+      <button class="hdr-btn" id="btn-back">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+        </svg>
+      </button>
+      <div class="hdr-chips">
+        <span class="hdr-chip chip-accent" id="difficulty-label">Easy</span>
+        <span class="hdr-chip chip-timer">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" />
+          </svg>
+          <span id="timer-display">00:00</span>
+          <button class="pause-btn" id="btn-pause-timer">
+            <svg id="pause-icon" viewBox="0 0 24 24">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+          </button>
+        </span>
+        <span class="hdr-chip chip-err">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+          </svg>
+          <span id="mistakes-display">0</span>/<span id="max-mistakes">3</span>
+        </span>
+      </div>
+      <button class="ctrl-btn sm" id="btn-theme-game">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+        </svg>
+      </button>
+    </header>
+
+    <main class="sudoku-main">
+      <div class="grid-wrap" id="grid-container">
+        <div id="sudoku-grid" class="sudoku-grid"></div>
+      </div>
+
+      <div class="numpad">
+        <button class="np-btn" data-num="1">1</button>
+        <button class="np-btn" data-num="2">2</button>
+        <button class="np-btn" data-num="3">3</button>
+        <button class="np-btn" data-num="4">4</button>
+        <button class="np-btn" data-num="5">5</button>
+        <button class="np-btn" data-num="6">6</button>
+        <button class="np-btn" data-num="7">7</button>
+        <button class="np-btn" data-num="8">8</button>
+        <button class="np-btn" data-num="9">9</button>
+      </div>
+
+      <div class="action-strip">
+        <button class="act-btn" id="btn-undo">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" />
+          </svg>
+          <span>Undo</span>
+        </button>
+        <button class="act-btn" id="btn-redo">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z" />
+          </svg>
+          <span>Redo</span>
+        </button>
+        <button class="act-btn" id="btn-erase">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20H20v-2h-6.21l7.07-7.07c.78-.78.78-2.05 0-2.83l-4.31-4.3c-.39-.4-.9-.6-1.41-.6zM6.41 19l-2.38-2.38 7.38-7.37 2.38 2.38L6.41 19z" />
+          </svg>
+          <span>Erase</span>
+        </button>
+        <button class="act-btn" id="btn-notes">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+          </svg>
+          <span>Notes</span>
+        </button>
+        <button class="act-btn" id="btn-hint">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z" />
+          </svg>
+          <span>Hint (<span id="hints-left">3</span>)</span>
+        </button>
+        <button class="act-btn" id="btn-auto-check">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+          </svg>
+          <span>Check</span>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <!-- ── LUDO GAME ── -->
+  <div id="ludo-screen" class="screen">
+    <header class="game-header glass-header">
+      <button class="hdr-btn" id="btn-ludo-back">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+        </svg>
+      </button>
+      <div class="hdr-chips">
+        <span class="hdr-chip chip-ludo">🎲 LUDO</span>
+        <span class="hdr-chip" id="ludo-turn-chip" style="background:rgba(255,100,100,.2);color:#ff6464;">Red's
+          Turn</span>
+      </div>
+      <button class="ctrl-btn sm" id="btn-theme-ludo">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+        </svg>
+      </button>
+    </header>
+
+    <div class="ludo-game-layout">
+      <div class="ludo-sidebar left">
+        <div class="ludo-player-card" id="lp-red">
+          <div class="lp-strip" style="background:#ff4444"></div>
+          <div class="lp-body">
+            <div class="lp-name">You</div>
+            <div class="lp-color-tag" style="color:#ff4444">Red</div>
+            <div class="lp-progress" id="lp-progress-red">
+              <div class="lp-token-dot" data-idx="0"></div>
+              <div class="lp-token-dot" data-idx="1"></div>
+              <div class="lp-token-dot" data-idx="2"></div>
+              <div class="lp-token-dot" data-idx="3"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ludo-player-card" id="lp-green">
+          <div class="lp-strip" style="background:#22c55e"></div>
+          <div class="lp-body">
+            <div class="lp-name">CPU</div>
+            <div class="lp-color-tag" style="color:#22c55e">Green</div>
+            <div class="lp-progress" id="lp-progress-green">
+              <div class="lp-token-dot" data-idx="0"></div>
+              <div class="lp-token-dot" data-idx="1"></div>
+              <div class="lp-token-dot" data-idx="2"></div>
+              <div class="lp-token-dot" data-idx="3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ludo-center-col">
+        <canvas id="ludo-canvas"></canvas>
+        <div class="ludo-dice-row">
+          <div class="dice-wrap">
+            <div class="dice-box" id="dice-box">
+              <div class="dice-val" id="dice-val">?</div>
+            </div>
+          </div>
+          <div class="ludo-msg-col">
+            <div class="ludo-msg" id="ludo-msg">Press Roll to start!</div>
+            <button class="btn-roll" id="btn-roll" disabled>Roll Dice</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ludo-sidebar right">
+        <div class="ludo-player-card" id="lp-blue">
+          <div class="lp-strip" style="background:#3b82f6"></div>
+          <div class="lp-body">
+            <div class="lp-name">CPU</div>
+            <div class="lp-color-tag" style="color:#3b82f6">Blue</div>
+            <div class="lp-progress" id="lp-progress-blue">
+              <div class="lp-token-dot" data-idx="0"></div>
+              <div class="lp-token-dot" data-idx="1"></div>
+              <div class="lp-token-dot" data-idx="2"></div>
+              <div class="lp-token-dot" data-idx="3"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ludo-player-card" id="lp-yellow">
+          <div class="lp-strip" style="background:#eab308"></div>
+          <div class="lp-body">
+            <div class="lp-name">CPU</div>
+            <div class="lp-color-tag" style="color:#eab308">Yellow</div>
+            <div class="lp-progress" id="lp-progress-yellow">
+              <div class="lp-token-dot" data-idx="0"></div>
+              <div class="lp-token-dot" data-idx="1"></div>
+              <div class="lp-token-dot" data-idx="2"></div>
+              <div class="lp-token-dot" data-idx="3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WIN SCREEN ── -->
+  <div id="win-screen" class="screen">
+    <canvas id="win-canvas"></canvas>
+    <div class="win-card glass-card">
+      <div class="win-trophy" id="win-trophy">🏆</div>
+      <h2 class="win-title" id="win-title">Puzzle Solved!</h2>
+      <div class="win-stats-row" id="win-stats"></div>
+      <button class="btn-play purple" id="btn-play-again" style="width:100%;justify-content:center">Play Again</button>
+      <button class="btn-secondary" id="btn-win-menu">Dashboard</button>
+    </div>
+  </div>
+
+  <!-- ── LEADERBOARD MODAL ── -->
+  <div id="lb-modal" class="modal-overlay hidden">
+    <div class="lb-card glass-card">
+      <button class="setup-close" id="btn-close-lb">✕</button>
+      <h2 class="setup-title">🏆 Leaderboard</h2>
+      <div id="lb-content"></div>
+    </div>
+  </div>
+
+  <!-- ── PAUSE OVERLAY ── -->
+  <div id="pause-overlay" class="modal-overlay hidden">
+    <div class="setup-card glass-card" style="text-align:center">
+      <h2 class="setup-title">⏸ Paused</h2>
+      <button class="btn-start purple" id="btn-resume-game" style="width:100%">Resume</button>
+      <button class="btn-secondary mt8" id="btn-pause-menu">Dashboard</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
